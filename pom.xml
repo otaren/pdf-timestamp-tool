@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- 基本情報 -->
+  <groupId>jp.co.opensol</groupId>
+  <artifactId>pdf-timestamp-tool</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  <name>PDFタイムスタンプツール</name>
+  <description>PDFファイルに電子署名とタイムスタンプを付与するJavaツール</description>
+
+  <!-- Javaバージョン指定 -->
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+
+  <!-- 依存ライブラリ -->
+  <dependencies>
+    <!-- iText Core（PDF処理ライブラリ） -->
+    <dependency>
+      <groupId>com.itextpdf</groupId>
+      <artifactId>itext7-core</artifactId>
+      <version>8.0.3</version>
+      <type>pom</type>
+    </dependency>
+
+    <!-- BouncyCastle（署名用ライブラリ） -->
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>1.70</version>
+    </dependency>
+  </dependencies>
+</project>

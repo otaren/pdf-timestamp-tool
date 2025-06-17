@@ -1,0 +1,21 @@
+# Maven build artifacts
+/target/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+*.iml
+.idea/
+*.log
+
+# Keystore files (セキュリティ対策）
+*.p12
+*.jks
+*.keystore

@@ -52,6 +52,7 @@ public class TSAContainer implements ExternalSignatureContainer {
 
 			byte[] tsToken;
 			try {
+				// タイムスタンプトークンを取得
 				tsToken = tsaClient.getTimeStampToken(hash);
 			} catch (TSPException e) {
 				throw new GeneralSecurityException("TSPException occurred", e);

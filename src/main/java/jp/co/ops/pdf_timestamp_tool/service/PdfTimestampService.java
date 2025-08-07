@@ -36,13 +36,21 @@ public class PdfTimestampService {
 		PdfStamper stamper = PdfStamper.createSignature(reader, os, '\0');
 
 		PdfSignatureAppearance appearance = stamper.getSignatureAppearance();
-		appearance.setReason("Document Timestamp");
-		appearance.setLocation("Batch CLI Tool");
-		appearance.setVisibleSignature(new Rectangle(0, 0, 0, 0), 1, "InvisibleSignature");
 
+		//　署名のメタ情報を設定（必須ではないため削除可能）
+		appearance.setReason("電子署名証明");
+		appearance.setLocation("OPS");
+
+		// タイムスタンプ署名を見えるように設定
+		appearance.setVisibleSignature(new Rectangle(100, 100, 250, 150), 1, "InvisibleSignature");
+
+		// タイムスタンプのクライアントを設定
 		TSAClientBouncyCastle tsaClient = new TSAClientBouncyCastle(tsaUrl);
+
+		// 外署名コンテナの作成
 		ExternalSignatureContainer external = new TSAContainer(tsaClient);
 
+		// 署名処理の実行
 		MakeSignature.signExternalContainer(appearance, external, 8192);
 	}
 }

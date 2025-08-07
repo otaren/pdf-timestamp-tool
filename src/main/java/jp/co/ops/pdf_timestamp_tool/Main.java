@@ -19,14 +19,11 @@ public class Main {
 			return;
 		}
 
-		
 		String tsaUrl = "https://freetsa.org/tsr";
 
 		for (File pdfFile : pdfFiles) {
 			String outputPath = "output/" + pdfFile.getName();
-
 			System.out.println("タイムスタンプ付与中: " + pdfFile.getName());
-
 			try {
 				PdfTimestampService.addTimestamp(pdfFile.getAbsolutePath(), outputPath, tsaUrl);
 				System.out.println("OK：" + outputPath);
@@ -35,6 +32,6 @@ public class Main {
 			}
 		}
 
-		System.out.println("全PDFのタイムスタンプ付与が完了しました。");
+		System.out.println("タイムスタンプを付与しました");
 	}
 }
